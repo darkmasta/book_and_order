@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="jumbotron">
+    
+        
+    <div class="row">
+      <div class="span3">
+        <h1><%= @restaurant.name %> - <%= @restaurant.category %><h1>
+      </div>
+      <div class="span3 offset3">
+        
+        <h3>Menu: <%= @restaurant.foods.count %></h3>
+      </div>
+      <div class="span8">
+        <ul>
+          <% @foods.each do |f| %>
+            <li>
+              <span><%= f.name %></span>
+              <span><%= f.price %></span>
+            </li>  
+          <% end %>
+        </ul>
+
+      </div>
+      <div class="span8">
+        <%= form_for(@food) do |f| %>
+          <div>
+            <%= f.label :Isim %><br />
+            <%= f.text_field :name %><br />
+          </div>
+
+          <div>
+            <%= f.label :Fiyat %><br />
+            <%= f.text_field :price %><br />
+          </div>
+
+          <div>
+            <%= f.text_field :restaurant_id %><br />
+          </div>
+
+          <%= f.submit "Yeni Yemek!", class: "btn btn-large btn-primary" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

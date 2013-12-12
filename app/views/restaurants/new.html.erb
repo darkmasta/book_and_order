@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="jumbotron">
+    <h3>Yeni Restaurant</h3>
+    <div class="span6 offset3">
+      <%= form_for(@restaurant) do |f|%>
+
+        <%= f.label :isim %><br />
+        <%= f.text_field :name %><br />
+
+        <%= f.label :kategori %><br />
+        <%= f.text_field :category %><br />
+
+        <%= f.submit "Yeni Restaurant!", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>      
