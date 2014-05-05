@@ -3,6 +3,10 @@ class FoodsController < ApplicationController
   def index
   end
 
+  def new
+    @food = Food.new
+  end
+
   def create
     @restaurant = Restaurant.find(food_params[:restaurant_id])
     @food = @restaurant.foods.build(food_params)
